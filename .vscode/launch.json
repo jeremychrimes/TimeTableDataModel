@@ -1,20 +1,16 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch) - Current File",
+            "name": "Debug (Launch)",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "TimeTable.TimeTable"
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-App<compassschedule1>",
+            "name": "CodeLens (Launch) - TimeTable",
             "request": "launch",
-            "mainClass": "app.App",
+            "mainClass": "TimeTable.TimeTable",
             "projectName": "compassschedule1"
         }
     ]
