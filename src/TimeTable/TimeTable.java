@@ -30,16 +30,10 @@ public class TimeTable {
         return classes;
     };
 	public static void main(String[] args) throws Exception {
-        WeekDay m = WeekDay.Monday;
+        // Load the data store into the computer
         datastore = new TimeTable("./periods.csv", "./subjects.csv");
         // Load the classes into the data store due to async issues in java this needs to be done after init.
         datastore.classes = ClassSession.loadClasses("./classes.csv");
-        for(Subject subject : TimeTable.datastore.subjects) {
-            System.out.println(subject.name);
-            List<ClassSession> classes = getClassesBySubject(subject);
-            for (ClassSession classsesh : classes) {
-                System.out.println(classsesh.day);
-            }
-        }
+        Subject.saveToFile(datastore.subjects, "subjects.csv");
     }
 }

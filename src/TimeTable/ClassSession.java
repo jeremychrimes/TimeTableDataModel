@@ -1,6 +1,7 @@
 package TimeTable;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,21 @@ class ClassSession {
             classes.add(session);
         }
         return classes;
+    }
+    public static void saveToFile(List<ClassSession> classes, String filename) {
+        System.out.println(filename);
+        try {
+            FileWriter fw = new FileWriter(filename);
+            for (ClassSession sesh : classes) {
+              String line = String.join(",", sesh.day.toString().toUpperCase(), String.valueOf(sesh.period.periodNumber), sesh.subject.shortname, "\n");
+              fw.write(line);
+            }
+            fw.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        System.out.println("Succesfully written to file");
+        
     }
     public ClassSession() {
     }

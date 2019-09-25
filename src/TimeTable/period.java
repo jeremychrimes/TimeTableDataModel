@@ -2,6 +2,8 @@ package TimeTable;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -30,5 +32,16 @@ class Period {
         }
         sc.close(); // CLose the scanner
         return periods;
+    }
+    
+    public static void saveToFile(List<Period> periods, String filename) throws FileNotFoundException, IOException {
+        System.out.println(filename);
+        FileWriter fw = new FileWriter(filename);
+        for (Period period : periods) {
+            String line = String.join(",", String.valueOf(period.periodNumber), period.startTime.toString(),
+                    period.endTime.toString(), "\n");
+            fw.write(line);
+        }
+        fw.close();
     }
 }
