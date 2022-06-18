@@ -1,11 +1,11 @@
-package TimeTable;
+package TimeTable.models;
 import java.util.regex.Pattern;
 
-class Time { 
-    public Integer days;
-    public Integer hours;
-    public Integer minutes;
-    public Integer seconds;
+public class Time {
+    private Integer days;
+    private Integer hours;
+    private Integer minutes;
+    private Integer seconds;
 
     public void setHours(Integer hours) { 
         while (hours > 24) {
@@ -29,7 +29,23 @@ class Time {
         this.seconds = seconds;
     }
 
-    public Time(Integer hours, Integer minutes, Integer seconds) { 
+    public Integer getDays() {
+        return days;
+    }
+
+    public Integer getHours() {
+        return hours;
+    }
+
+    public Integer getMinutes() {
+        return minutes;
+    }
+
+    public Integer getSeconds() {
+        return seconds;
+    }
+
+    public Time(Integer hours, Integer minutes, Integer seconds) {
         this.days = 0;
         setHours(hours);
         setMinutes(minutes);
@@ -55,7 +71,8 @@ class Time {
         this.seconds = 0;
     }
     public String toString() {
-        String returnValue = String.join(":", String.format("%02d", this.hours), String.format("%02d", this.minutes) , String.format("%02d", this.seconds));
+        String returnValue = String.join(":", String.format("%02d", this.hours),
+                String.format("%02d", this.minutes) , String.format("%02d", this.seconds));
         return returnValue;
     }
 }

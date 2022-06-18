@@ -1,4 +1,4 @@
-package TimeTable;
+package TimeTable.models;
 
 public enum WeekDay {
     // Define the properties which the Enumerator can take
@@ -42,6 +42,4 @@ public enum WeekDay {
             throw new IllegalArgumentException("Day not found");
         }
     }
-
-    
 }
